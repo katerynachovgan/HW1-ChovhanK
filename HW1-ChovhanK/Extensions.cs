@@ -8,11 +8,11 @@ namespace HW1_ChovhanK
     {
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddSingleton<IAddContent, AddContent>();
-            services.AddSingleton<ISaveArticleInfo, SaveArticleInfo>();
+            services.AddSingleton<IArticleInfo, ArticleInfo>();
+            services.AddScoped<IAddContent, AddContent>();
             services.AddTransient<ICheckArticle, CheckArticle>();
-            services.AddSingleton<IPublishArticle, PublishArticle>();
-
+            services.AddScoped<IPublishArticle, PublishArticle>();
+            services.AddScoped<AllProcessess>();
 
             return services;
         }

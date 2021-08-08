@@ -4,14 +4,15 @@ namespace Services
 {
     public class CheckArticle : ICheckArticle
     {
-        private readonly IAddContent _content;
-        public CheckArticle(IAddContent content)
+        private readonly IArticleInfo _articleinfo;
+        public CheckArticle(IArticleInfo articleInfo)
         {
-            _content = content;
+            _articleinfo = articleInfo;
         }
+
         public void Check(object criteria)
         {
-            //check the content
+            System.Console.WriteLine($"Article {_articleinfo} have been checked with criteria: {criteria} ");
         }
     }
 }

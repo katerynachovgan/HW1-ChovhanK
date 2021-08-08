@@ -4,9 +4,14 @@ namespace Services
 {
     public class AddContent : IAddContent
     {
-        public string AddTheContent(string content)
+        private readonly IArticleInfo _articleinfo;
+        public AddContent(IArticleInfo articleInfo)
         {
-            return content;
+            _articleinfo = articleInfo;
+        }
+        public string AddTheContent(string text)
+        {
+            return _articleinfo + text;
         }
     }
 }

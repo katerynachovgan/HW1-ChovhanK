@@ -2,6 +2,6 @@
 {
     public interface IAddContent
     {
-        string AddTheContent(string content);
+        string AddTheContent(string text);
     }
 }
